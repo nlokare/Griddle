@@ -205,6 +205,9 @@ var GridTable = React.createClass({
     var tableStyle = {
       width: "100%"
     };
+    var bodyTableStyle = {
+      width: "100%"
+    };
 
     if (this.props.useFixedLayout) {
       tableStyle.tableLayout = "fixed";
@@ -270,7 +273,7 @@ var GridTable = React.createClass({
         tableStyle.tableLayout = "fixed";
       }
 
-      return React.createElement('div', null, React.createElement('table', { className: this.props.className, style: this.props.useGriddleStyles && tableStyle || null }, tableHeading), React.createElement('div', { ref: 'scrollable', onScroll: this.gridScroll, style: gridStyle }, React.createElement('table', { className: this.props.className, style: this.props.useGriddleStyles && tableStyle || null }, nodes, loadingContent, pagingContent)));
+      return React.createElement('div', null, React.createElement('table', { className: this.props.className, style: this.props.useGriddleStyles && tableStyle || null }, tableHeading), React.createElement('div', { ref: 'scrollable', onScroll: this.gridScroll, style: gridStyle }, React.createElement('table', { className: this.props.className, style: this.props.useGriddleStyles && bodyTableStyle || null }, nodes, loadingContent, pagingContent)));
     }
 
     return React.createElement('div', { ref: 'scrollable', onScroll: this.gridScroll, style: gridStyle }, React.createElement('table', { className: this.props.className, style: this.props.useGriddleStyles && tableStyle || null }, tableHeading, nodes, loadingContent, pagingContent));
